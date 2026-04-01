@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "replace": true,
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:plates/netherite"
+    }
+  },
+  "pattern": [
+    " # ",
+    "###",
+    "# #"
+  ],
+  "result": {
+    "count": 4,
+    "item": "ad_astra:rocket_fin"
+  }
+  }

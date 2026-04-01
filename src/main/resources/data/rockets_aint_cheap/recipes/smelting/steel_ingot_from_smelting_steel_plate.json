@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0,
+  "ingredient": {
+    "item": "ad_astra:steel_plate"
+  },
+  "result": "ad_astra:steel_ingot"
+}

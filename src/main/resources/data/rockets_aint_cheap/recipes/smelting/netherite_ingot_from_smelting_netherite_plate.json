@@ -1,0 +1,10 @@
+{
+  "type": "minecraft:smelting",
+  "category": "misc",
+  "cookingtime": 100,
+  "experience": 0,
+  "ingredient": {
+    "item": "rockets_aint_cheap:netherite_plate"
+  },
+  "result": "rockets_aint_cheap:netherite_chunk"
+}

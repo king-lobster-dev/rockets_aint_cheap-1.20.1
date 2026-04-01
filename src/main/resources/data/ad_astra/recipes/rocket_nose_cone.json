@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "replace": true,
+  "category": "misc",
+  "key": {
+    "#": {
+      "tag": "forge:plates/netherite"
+    },
+    "|": {
+      "item": "minecraft:lightning_rod"
+    }
+  },
+  "pattern": [
+    " | ",
+    " # ",
+    "###"
+  ],
+  "result": {
+    "item": "ad_astra:rocket_nose_cone"
+  }
+}
