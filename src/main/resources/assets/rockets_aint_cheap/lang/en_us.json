@@ -1,19 +1,16 @@
 {
-  "item.rockets_aint_cheap.netherite_chunk": "Netherite Chunk",
-  "item.rockets_aint_cheap.netherite_plate": "Netherite Plate",
-  "item.rockets_aint_cheap.netherite_rod": "Netherite Rod",
-  "item.rockets_aint_cheap.nether_compass": "Nether Compass",
+  "item.rockets_aint_cheap.aerosteel_plate": "Aerosteel Plate",
+  "item.rockets_aint_cheap.tier_1_rocket_panel": "Tier 1 Rocket Panel",
 
-
-  "block.rockets_aint_cheap.netherite_factory_block": "Netherite Factory Block",
-  "block.rockets_aint_cheap.encased_netherite_block": "Encased Netherite Block",
-  "block.rockets_aint_cheap.netherite_plateblock": "Netherite Plateblock",
-  "block.rockets_aint_cheap.netherite_panel": "Netherite Panel",
-  "block.rockets_aint_cheap.netherite_plating": "Netherite Plating",
-  "block.rockets_aint_cheap.netherite_plating_stairs": "Netherite Plating Stairs",
-  "block.rockets_aint_cheap.netherite_plating_slab": "Netherite Plating Slab",
-  "block.rockets_aint_cheap.netherite_pillar": "Netherite Pillar",
-  "block.rockets_aint_cheap.glowing_netherite_pillar": "Glowing Netherite Pillar",
+  "block.rockets_aint_cheap.aerosteel_factory_block": "Aerosteel Factory Block",
+  "block.rockets_aint_cheap.encased_aerosteel_block": "Encased Aerosteel Block",
+  "block.rockets_aint_cheap.aerosteel_plateblock": "Aerosteel Plateblock",
+  "block.rockets_aint_cheap.aerosteel_panel": "Aerosteel Panel",
+  "block.rockets_aint_cheap.aerosteel_plating": "Aerosteel Plating",
+  "block.rockets_aint_cheap.aerosteel_plating_stairs": "Aerosteel Plating Stairs",
+  "block.rockets_aint_cheap.aerosteel_plating_slab": "Aerosteel Plating Slab",
+  "block.rockets_aint_cheap.aerosteel_pillar": "Aerosteel Pillar",
+  "block.rockets_aint_cheap.glowing_aerosteel_pillar": "Glowing Aerosteel Pillar",
 
   "creativetab.rockets_aint_cheap_tab": "Rockets Ain't Cheap"
 }

@@ -1,6 +1,0 @@
-{
-  "parent": "minecraft:item/generated",
-  "textures": {
-    "layer0": "rockets_aint_cheap:item/nether_compass_12"
-  }
-}

@@ -20,32 +20,32 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "rockets_aint_cheap");
 
-    public static final RegistryObject<Block> NETHERITE_FACTORY_BLOCK = registerBlock("netherite_factory_block",
-            () -> new Block(netheriteProperties()));
+    public static final RegistryObject<Block> AEROSTEEL_FACTORY_BLOCK = registerBlock("aerosteel_factory_block",
+            () -> new Block(aerosteelProperties()));
 
-    public static final RegistryObject<Block> ENCASED_NETHERITE_BLOCK = registerBlock("encased_netherite_block",
-            () -> new Block(netheriteProperties()));
+    public static final RegistryObject<Block> ENCASED_AEROSTEEL_BLOCK = registerBlock("encased_aerosteel_block",
+            () -> new Block(aerosteelProperties()));
 
-    public static final RegistryObject<Block> NETHERITE_PLATEBLOCK = registerBlock("netherite_plateblock",
-            () -> new Block(netheriteProperties()));
+    public static final RegistryObject<Block> AEROSTEEL_PLATEBLOCK = registerBlock("aerosteel_plateblock",
+            () -> new Block(aerosteelProperties()));
 
-    public static final RegistryObject<Block> NETHERITE_PANEL = registerBlock("netherite_panel",
-            () -> new Block(netheriteProperties()));
+    public static final RegistryObject<Block> AEROSTEEL_PANEL = registerBlock("aerosteel_panel",
+            () -> new Block(aerosteelProperties()));
 
-    public static final RegistryObject<Block> NETHERITE_PLATING = registerBlock("netherite_plating",
-            () -> new Block(netheriteProperties()));
+    public static final RegistryObject<Block> AEROSTEEL_PLATING = registerBlock("aerosteel_plating",
+            () -> new Block(aerosteelProperties()));
 
-    public static final RegistryObject<Block> NETHERITE_PLATING_STAIRS = registerBlock("netherite_plating_stairs",
-            () -> new StairBlock(() -> NETHERITE_PLATING.get().defaultBlockState(), netheriteProperties()));
+    public static final RegistryObject<Block> AEROSTEEL_PLATING_STAIRS = registerBlock("aerosteel_plating_stairs",
+            () -> new StairBlock(() -> AEROSTEEL_PLATING.get().defaultBlockState(), aerosteelProperties()));
 
-    public static final RegistryObject<Block> NETHERITE_PLATING_SLAB = registerBlock("netherite_plating_slab",
-            () -> new SlabBlock(netheriteProperties()));
+    public static final RegistryObject<Block> AEROSTEEL_PLATING_SLAB = registerBlock("aerosteel_plating_slab",
+            () -> new SlabBlock(aerosteelProperties()));
 
-    public static final RegistryObject<Block> NETHERITE_PILLAR = registerBlock("netherite_pillar",
-            () -> new RotatedPillarBlock(netheriteProperties()));
+    public static final RegistryObject<Block> AEROSTEEL_PILLAR = registerBlock("aerosteel_pillar",
+            () -> new RotatedPillarBlock(aerosteelProperties()));
 
-    public static final RegistryObject<Block> GLOWING_NETHERITE_PILLAR = registerBlock("glowing_netherite_pillar",
-            () -> new RotatedPillarBlock(netheriteProperties().lightLevel((state) -> 15)));
+    public static final RegistryObject<Block> GLOWING_AEROSTEEL_PILLAR = registerBlock("glowing_aerosteel_pillar",
+            () -> new RotatedPillarBlock(aerosteelProperties().lightLevel((state) -> 15)));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -61,7 +61,7 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
     }
 
-    private static BlockBehaviour.Properties netheriteProperties() {
+    private static BlockBehaviour.Properties aerosteelProperties() {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.METAL)
                 .instrument(NoteBlockInstrument.IRON_XYLOPHONE)

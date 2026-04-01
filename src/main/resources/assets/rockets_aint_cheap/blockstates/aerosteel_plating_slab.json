@@ -1,0 +1,13 @@
+{
+  "variants": {
+    "type=bottom": {
+      "model": "rockets_aint_cheap:block/aerosteel_plating_slab"
+    },
+    "type=double": {
+      "model": "rockets_aint_cheap:block/aerosteel_plating"
+    },
+    "type=top": {
+      "model": "rockets_aint_cheap:block/aerosteel_plating_slab_top"
+    }
+  }
+}

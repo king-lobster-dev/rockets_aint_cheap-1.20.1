@@ -1,0 +1,19 @@
+{
+  "type": "minecraft:crafting_shaped",
+"category": "misc",
+"pattern": [
+"###",
+"#$#",
+"###"
+],
+"key": {
+"#": {
+"item": "rockets_aint_cheap:aerosteel_plate"},
+"$": {
+"tag": "forge:ingots/steel"}
+},
+"result": {
+"item": "rockets_aint_cheap:aerosteel_factory_block",
+"count": 64
+}
+}

@@ -1,19 +1,18 @@
 {
   "type": "minecraft:crafting_shaped",
-  "replace": true,
   "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
   "key": {
     "#": {
       "item": "rockets_aint_cheap:aerosteel_plate"
     }
   },
-  "pattern": [
-    " # ",
-    "###",
-    "# #"
-  ],
   "result": {
-    "count": 4,
-    "item": "ad_astra:rocket_fin"
+    "item": "rockets_aint_cheap:aerosteel_plating",
+    "count": 64
   }
 }

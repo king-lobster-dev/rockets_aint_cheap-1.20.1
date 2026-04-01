@@ -2,7 +2,7 @@ package net.lobster.rockets_aint_cheap;
 
 import com.mojang.logging.LogUtils;
 import net.lobster.rockets_aint_cheap.blocks.ModBlocks;
-import net.lobster.rockets_aint_cheap.item.ModCreativeModTabs;
+import net.lobster.rockets_aint_cheap.item.ModCreativeModeTabs;
 import net.lobster.rockets_aint_cheap.item.ModItems;
 import net.minecraftforge.api.distmarker.Dist;
 import net.minecraftforge.common.MinecraftForge;
@@ -23,7 +23,7 @@ public class Rockets_Aint_Cheap {
 
     public Rockets_Aint_Cheap(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
-        ModCreativeModTabs.register(modEventBus);
+        ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
         ModBlocks.register(modEventBus);
         modEventBus.addListener(this::commonSetup);

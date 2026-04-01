@@ -1,0 +1,7 @@
+{
+  "parent": "minecraft:block/cube_column_horizontal",
+  "textures": {
+    "end": "rockets_aint_cheap:block/glowing_aerosteel_pillar_top",
+    "side": "rockets_aint_cheap:block/glowing_aerosteel_pillar"
+  }
+}

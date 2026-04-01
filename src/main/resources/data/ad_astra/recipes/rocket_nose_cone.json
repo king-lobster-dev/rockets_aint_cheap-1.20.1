@@ -4,7 +4,7 @@
   "category": "misc",
   "key": {
     "#": {
-      "tag": "forge:plates/netherite"
+      "item": "rockets_aint_cheap:aerosteel_plate"
     },
     "|": {
       "item": "minecraft:lightning_rod"
