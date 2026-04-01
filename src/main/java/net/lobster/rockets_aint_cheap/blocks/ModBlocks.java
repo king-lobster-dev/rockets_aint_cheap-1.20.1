@@ -20,6 +20,9 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "rockets_aint_cheap");
 
+    public static final RegistryObject<Block> AEROSTEEL_BLOCK = registerBlock("aerosteel_block",
+            () -> new Block(aerosteelProperties()));
+
     public static final RegistryObject<Block> AEROSTEEL_FACTORY_BLOCK = registerBlock("aerosteel_factory_block",
             () -> new Block(aerosteelProperties()));
 

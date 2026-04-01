@@ -1,7 +1,13 @@
 {
   "item.rockets_aint_cheap.aerosteel_plate": "Aerosteel Plate",
+  "item.rockets_aint_cheap.aerosteel_ingot": "Aerosteel Ingot",
+  "item.rockets_aint_cheap.engine_propeller": "Engine Propeller",
   "item.rockets_aint_cheap.tier_1_rocket_panel": "Tier 1 Rocket Panel",
+  "item.rockets_aint_cheap.tier_2_rocket_panel": "Tier 2 Rocket Panel",
+  "item.rockets_aint_cheap.tier_3_rocket_panel": "Tier 3 Rocket Panel",
+  "item.rockets_aint_cheap.tier_4_rocket_panel": "Tier 4 Rocket Panel",
 
+  "block.rockets_aint_cheap.aerosteel_block": "Aerosteel Block",
   "block.rockets_aint_cheap.aerosteel_factory_block": "Aerosteel Factory Block",
   "block.rockets_aint_cheap.encased_aerosteel_block": "Encased Aerosteel Block",
   "block.rockets_aint_cheap.aerosteel_plateblock": "Aerosteel Plateblock",

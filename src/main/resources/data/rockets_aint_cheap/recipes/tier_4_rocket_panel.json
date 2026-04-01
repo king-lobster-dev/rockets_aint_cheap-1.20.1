@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "pattern": [
+    "###",
+    "###",
+    "###"
+  ],
+  "key": {
+    "#": {
+      "item": "ad_astra:calorite_plate"}
+  },
+  "result": {
+    "item": "rockets_aint_cheap:tier_4_rocket_panel",
+    "count": 6
+  }
+}

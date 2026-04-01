@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "replace": true,
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "rockets_aint_cheap:aerosteel_plate"
+    },
+    "%": {
+      "item": "ad_astra:gas_tank"
+    },
+    "-": {
+      "item": "ad_astra:steel_rod"
+    }
+  },
+  "pattern": [
+    "## ",
+    "#%-",
+    "## "
+  ],
+  "result": {
+    "item": "ad_astra:steel_tank"
+  }
+}

@@ -20,7 +20,7 @@ license="All Rights Reserved"
 # The modid of the mod
 modId="rockets_aint_cheap" #mandatory
 # The version number of the mod
-version="0.2.0" #mandatory
+version="0.2.1" #mandatory
 # A display name for the mod
 displayName="Rockets Ain't Cheap" #mandatory
 # A URL to query for updates for this mod. See the JSON update specification https://docs.minecraftforge.net/en/latest/misc/updatechecker/

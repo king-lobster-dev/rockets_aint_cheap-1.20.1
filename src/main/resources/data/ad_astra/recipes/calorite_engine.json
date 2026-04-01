@@ -1,0 +1,24 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "replace": true,
+  "category": "misc",
+  "key": {
+    "#": {
+      "item": "ad_astra:calorite_plate"
+    },
+    "%": {
+      "item": "ad_astra:ostrum_engine"
+    },
+    "X": {
+      "item": "rockets_aint_cheap:engine_propeller"
+    }
+  },
+  "pattern": [
+    "###",
+    "#%#",
+    " X "
+  ],
+  "result": {
+    "item": "ad_astra:calorite_engine"
+  }
+}
