@@ -1,13 +1,13 @@
 {
   "values": [
-    "rockets_aint_cheap:aerosteel_factory_block",
-    "rockets_aint_cheap:encased_aerosteel_block",
-    "rockets_aint_cheap:aerosteel_plateblock",
-    "rockets_aint_cheap:aerosteel_panel",
-    "rockets_aint_cheap:aerosteel_plating",
-    "rockets_aint_cheap:aerosteel_plating_stairs",
-    "rockets_aint_cheap:aerosteel_plating_slab",
-    "rockets_aint_cheap:aerosteel_pillar",
-    "rockets_aint_cheap:glowing_aerosteel_pillar"
+    "rockets_aint_cheap:astrosteel_factory_block",
+    "rockets_aint_cheap:encased_astrosteel_block",
+    "rockets_aint_cheap:astrosteel_plateblock",
+    "rockets_aint_cheap:astrosteel_panel",
+    "rockets_aint_cheap:astrosteel_plating",
+    "rockets_aint_cheap:astrosteel_plating_stairs",
+    "rockets_aint_cheap:astrosteel_plating_slab",
+    "rockets_aint_cheap:astrosteel_pillar",
+    "rockets_aint_cheap:glowing_astrosteel_pillar"
   ]
 }

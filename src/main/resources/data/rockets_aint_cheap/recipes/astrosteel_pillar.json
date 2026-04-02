@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+"category": "misc",
+"pattern": [
+" # ",
+" # ",
+"   "
+],
+"key": {
+"#": {
+"item": "rockets_aint_cheap:astrosteel_plating"}
+},
+"result": {
+"item": "rockets_aint_cheap:astrosteel_pillar",
+"count": 2
+}
+}

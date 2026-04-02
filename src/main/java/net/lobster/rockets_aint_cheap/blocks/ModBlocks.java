@@ -4,12 +4,9 @@ import java.util.function.Supplier;
 import net.lobster.rockets_aint_cheap.item.ModItems;
 import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.Item;
-import net.minecraft.world.level.block.Block;
-import net.minecraft.world.level.block.RotatedPillarBlock;
-import net.minecraft.world.level.block.SlabBlock;
-import net.minecraft.world.level.block.SoundType;
-import net.minecraft.world.level.block.StairBlock;
+import net.minecraft.world.level.block.*;
 import net.minecraft.world.level.block.state.BlockBehaviour;
+import net.minecraft.world.level.block.state.properties.BlockSetType;
 import net.minecraft.world.level.block.state.properties.NoteBlockInstrument;
 import net.minecraft.world.level.material.MapColor;
 import net.minecraftforge.eventbus.api.IEventBus;
@@ -20,35 +17,33 @@ import net.minecraftforge.registries.RegistryObject;
 public class ModBlocks {
     public static final DeferredRegister<Block> BLOCKS = DeferredRegister.create(ForgeRegistries.BLOCKS, "rockets_aint_cheap");
 
-    public static final RegistryObject<Block> AEROSTEEL_BLOCK = registerBlock("aerosteel_block",
-            () -> new Block(aerosteelProperties()));
+    public static final RegistryObject<Block> ASTROSTEEL_BLOCK = registerBlock("astrosteel_block",
+            () -> new Block(astrosteelProperties()));
+    public static final RegistryObject<Block> ASTROSTEEL_FACTORY_BLOCK = registerBlock("astrosteel_factory_block",
+            () -> new Block(astrosteelProperties()));
+    public static final RegistryObject<Block> ENCASED_ASTROSTEEL_BLOCK = registerBlock("encased_astrosteel_block",
+            () -> new Block(astrosteelProperties()));
+    public static final RegistryObject<Block> ASTROSTEEL_PLATEBLOCK = registerBlock("astrosteel_plateblock",
+            () -> new Block(astrosteelProperties()));
+    public static final RegistryObject<Block> ASTROSTEEL_PANEL = registerBlock("astrosteel_panel",
+            () -> new Block(astrosteelProperties()));
+    public static final RegistryObject<Block> ASTROSTEEL_PLATING = registerBlock("astrosteel_plating",
+            () -> new Block(astrosteelProperties()));
 
-    public static final RegistryObject<Block> AEROSTEEL_FACTORY_BLOCK = registerBlock("aerosteel_factory_block",
-            () -> new Block(aerosteelProperties()));
+    public static final RegistryObject<Block> ASTROSTEEL_PILLAR = registerBlock("astrosteel_pillar",
+            () -> new RotatedPillarBlock(astrosteelProperties()));
+    public static final RegistryObject<Block> GLOWING_ASTROSTEEL_PILLAR = registerBlock("glowing_astrosteel_pillar",
+            () -> new RotatedPillarBlock(astrosteelProperties().lightLevel((state) -> 15)));
 
-    public static final RegistryObject<Block> ENCASED_AEROSTEEL_BLOCK = registerBlock("encased_aerosteel_block",
-            () -> new Block(aerosteelProperties()));
+    public static final RegistryObject<Block> ASTROSTEEL_PLATING_STAIRS = registerBlock("astrosteel_plating_stairs",
+            () -> new StairBlock(() -> ASTROSTEEL_PLATING.get().defaultBlockState(), astrosteelProperties()));
+    public static final RegistryObject<Block> ASTROSTEEL_PLATING_SLAB = registerBlock("astrosteel_plating_slab",
+            () -> new SlabBlock(astrosteelProperties()));
 
-    public static final RegistryObject<Block> AEROSTEEL_PLATEBLOCK = registerBlock("aerosteel_plateblock",
-            () -> new Block(aerosteelProperties()));
-
-    public static final RegistryObject<Block> AEROSTEEL_PANEL = registerBlock("aerosteel_panel",
-            () -> new Block(aerosteelProperties()));
-
-    public static final RegistryObject<Block> AEROSTEEL_PLATING = registerBlock("aerosteel_plating",
-            () -> new Block(aerosteelProperties()));
-
-    public static final RegistryObject<Block> AEROSTEEL_PLATING_STAIRS = registerBlock("aerosteel_plating_stairs",
-            () -> new StairBlock(() -> AEROSTEEL_PLATING.get().defaultBlockState(), aerosteelProperties()));
-
-    public static final RegistryObject<Block> AEROSTEEL_PLATING_SLAB = registerBlock("aerosteel_plating_slab",
-            () -> new SlabBlock(aerosteelProperties()));
-
-    public static final RegistryObject<Block> AEROSTEEL_PILLAR = registerBlock("aerosteel_pillar",
-            () -> new RotatedPillarBlock(aerosteelProperties()));
-
-    public static final RegistryObject<Block> GLOWING_AEROSTEEL_PILLAR = registerBlock("glowing_aerosteel_pillar",
-            () -> new RotatedPillarBlock(aerosteelProperties().lightLevel((state) -> 15)));
+    public static final RegistryObject<Block> ASTROSTEEL_PLATING_BUTTON = registerBlock("astrosteel_plating_button",
+            () -> new ButtonBlock(BlockBehaviour.Properties.copy(Blocks.STONE_BUTTON).sound(SoundType.STONE).explosionResistance(1200), BlockSetType.IRON, 10, false));
+    public static final RegistryObject<Block> ASTROSTEEL_PLATING_PRESSURE_PLATE = registerBlock("astrosteel_plating_pressure_plate",
+            () -> new PressurePlateBlock(PressurePlateBlock.Sensitivity.MOBS, BlockBehaviour.Properties.copy(Blocks.STONE_PRESSURE_PLATE).sound(SoundType.STONE).explosionResistance(1200), BlockSetType.IRON));
 
     private static <T extends Block> RegistryObject<T> registerBlock(String name, Supplier<T> block) {
         RegistryObject<T> toReturn = BLOCKS.register(name, block);
@@ -64,7 +59,7 @@ public class ModBlocks {
         BLOCKS.register(eventBus);
     }
 
-    private static BlockBehaviour.Properties aerosteelProperties() {
+    private static BlockBehaviour.Properties astrosteelProperties() {
         return BlockBehaviour.Properties.of()
                 .mapColor(MapColor.METAL)
                 .instrument(NoteBlockInstrument.IRON_XYLOPHONE)

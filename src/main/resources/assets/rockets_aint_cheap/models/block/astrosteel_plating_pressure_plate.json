@@ -1,0 +1,6 @@
+{
+  "parent": "minecraft:block/pressure_plate_up",
+  "textures": {
+    "texture": "rockets_aint_cheap:block/astrosteel_plating"
+  }
+}

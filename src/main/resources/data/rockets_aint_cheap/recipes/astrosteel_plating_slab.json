@@ -2,16 +2,17 @@
   "type": "minecraft:crafting_shaped",
   "category": "misc",
   "pattern": [
+    "   ",
     "###",
-    "###",
-    "###"
+    "   "
   ],
   "key": {
     "#": {
-      "item": "rockets_aint_cheap:astrosteel_plate"}
+      "item": "rockets_aint_cheap:astrosteel_plating"
+    }
   },
   "result": {
-    "item": "rockets_aint_cheap:tier_1_rocket_panel",
+    "item": "rockets_aint_cheap:astrosteel_plating_slab",
     "count": 6
   }
 }

@@ -15,28 +15,31 @@ public class ModCreativeModeTabs {
 
     public static final RegistryObject<CreativeModeTab> ROCKETS_AINT_CHEAP_TAB = CREATIVE_MODE_TABS.register("rockets_aint_cheap_tab",
             () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.AEROSTEEL_PLATE.get()))
+                    .icon(() -> new ItemStack(ModItems.ASTROSTEEL_PLATE.get()))
                     .title(Component.translatable("creativetab.rockets_aint_cheap_tab"))
                     .displayItems((pParameters, pOutput) -> {
-                        pOutput.accept(ModItems.AEROSTEEL_PLATE.get());
-                        pOutput.accept(ModItems.AEROSTEEL_ROD.get());
-                        pOutput.accept(ModItems.AEROSTEEL_INGOT.get());
+                        pOutput.accept(ModItems.ASTROSTEEL_PLATE.get());
+                        pOutput.accept(ModItems.ASTROSTEEL_ROD.get());
+                        pOutput.accept(ModItems.ASTROSTEEL_INGOT.get());
                         pOutput.accept(ModItems.ENGINE_PROPELLER.get());
                         pOutput.accept(ModItems.TIER_1_ROCKET_PANEL.get());
                         pOutput.accept(ModItems.TIER_2_ROCKET_PANEL.get());
                         pOutput.accept(ModItems.TIER_3_ROCKET_PANEL.get());
                         pOutput.accept(ModItems.TIER_4_ROCKET_PANEL.get());
 
-                        pOutput.accept(ModBlocks.AEROSTEEL_BLOCK.get());
-                        pOutput.accept(ModBlocks.AEROSTEEL_FACTORY_BLOCK.get());
-                        pOutput.accept(ModBlocks.ENCASED_AEROSTEEL_BLOCK.get());
-                        pOutput.accept(ModBlocks.AEROSTEEL_PLATEBLOCK.get());
-                        pOutput.accept(ModBlocks.AEROSTEEL_PANEL.get());
-                        pOutput.accept(ModBlocks.AEROSTEEL_PLATING.get());
-                        pOutput.accept(ModBlocks.AEROSTEEL_PLATING_STAIRS.get());
-                        pOutput.accept(ModBlocks.AEROSTEEL_PLATING_SLAB.get());
-                        pOutput.accept(ModBlocks.AEROSTEEL_PILLAR.get());
-                        pOutput.accept(ModBlocks.GLOWING_AEROSTEEL_PILLAR.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_BLOCK.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_FACTORY_BLOCK.get());
+                        pOutput.accept(ModBlocks.ENCASED_ASTROSTEEL_BLOCK.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_PLATEBLOCK.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_PANEL.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_PLATING.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_PLATING_STAIRS.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_PLATING_SLAB.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_PILLAR.get());
+                        pOutput.accept(ModBlocks.GLOWING_ASTROSTEEL_PILLAR.get());
+
+                        pOutput.accept(ModBlocks.ASTROSTEEL_PLATING_BUTTON.get());
+                        pOutput.accept(ModBlocks.ASTROSTEEL_PLATING_PRESSURE_PLATE.get());
                     })
                     .build());
 

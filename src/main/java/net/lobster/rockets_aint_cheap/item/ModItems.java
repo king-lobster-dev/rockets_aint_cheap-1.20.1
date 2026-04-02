@@ -10,11 +10,11 @@ public class ModItems {
     public static final DeferredRegister<Item> ITEMS =
             DeferredRegister.create(ForgeRegistries.ITEMS, "rockets_aint_cheap");
 
-    public static final RegistryObject<Item> AEROSTEEL_PLATE = ITEMS.register("aerosteel_plate",
+    public static final RegistryObject<Item> ASTROSTEEL_PLATE = ITEMS.register("astrosteel_plate",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> AEROSTEEL_ROD = ITEMS.register("aerosteel_rod",
+    public static final RegistryObject<Item> ASTROSTEEL_ROD = ITEMS.register("astrosteel_rod",
             () -> new Item(new Item.Properties()));
-    public static final RegistryObject<Item> AEROSTEEL_INGOT = ITEMS.register("aerosteel_ingot",
+    public static final RegistryObject<Item> ASTROSTEEL_INGOT = ITEMS.register("astrosteel_ingot",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENGINE_PROPELLER = ITEMS.register("engine_propeller",
             () -> new Item(new Item.Properties()));

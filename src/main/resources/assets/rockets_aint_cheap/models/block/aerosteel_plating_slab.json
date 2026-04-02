@@ -1,8 +1,0 @@
-{
-  "parent": "minecraft:block/slab",
-  "textures": {
-    "bottom": "rockets_aint_cheap:block/aerosteel_plating",
-    "side": "rockets_aint_cheap:block/aerosteel_plating",
-    "top": "rockets_aint_cheap:block/aerosteel_plating"
-  }
-}

@@ -1,0 +1,16 @@
+{
+  "variants": {
+    "axis=x": {
+      "model": "rockets_aint_cheap:block/astrosteel_pillar_horizontal",
+      "x": 90,
+      "y": 90
+    },
+    "axis=y": {
+      "model": "rockets_aint_cheap:block/astrosteel_pillar"
+    },
+    "axis=z": {
+      "model": "rockets_aint_cheap:block/astrosteel_pillar_horizontal",
+      "x": 90
+    }
+  }
+}

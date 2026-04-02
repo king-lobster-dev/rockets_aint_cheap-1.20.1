@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+"category": "misc",
+"pattern": [
+"###",
+"###",
+"###"
+],
+"key": {
+"#": {
+  "item": "rockets_aint_cheap:astrosteel_ingot"}
+},
+"result": {
+"item": "rockets_aint_cheap:astrosteel_block",
+"count": 1
+}
+}
