@@ -19,6 +19,7 @@ public class ModCreativeModeTabs {
                     .title(Component.translatable("creativetab.rockets_aint_cheap_tab"))
                     .displayItems((pParameters, pOutput) -> {
                         pOutput.accept(ModItems.AEROSTEEL_PLATE.get());
+                        pOutput.accept(ModItems.AEROSTEEL_ROD.get());
                         pOutput.accept(ModItems.AEROSTEEL_INGOT.get());
                         pOutput.accept(ModItems.ENGINE_PROPELLER.get());
                         pOutput.accept(ModItems.TIER_1_ROCKET_PANEL.get());

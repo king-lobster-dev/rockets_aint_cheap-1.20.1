@@ -4,14 +4,20 @@
   "energy": 20,
   "ingredients": [
     {
-      "tag": "forge:plates/steel"
+      "tag": "forge:ingots/steel"
+    },
+    {
+      "tag": "forge:ingots/steel"
+    },
+    {
+      "tag": "forge:ingots/steel"
     },
     {
       "item": "minecraft:netherite_scrap"
     }
   ],
   "result": {
-    "count": 1,
-    "id": "rockets_aint_cheap:aerosteel_plate"
+    "count": 3,
+    "id": "rockets_aint_cheap:aerosteel_ingot"
   }
 }

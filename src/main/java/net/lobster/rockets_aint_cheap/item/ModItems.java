@@ -12,6 +12,8 @@ public class ModItems {
 
     public static final RegistryObject<Item> AEROSTEEL_PLATE = ITEMS.register("aerosteel_plate",
             () -> new Item(new Item.Properties()));
+    public static final RegistryObject<Item> AEROSTEEL_ROD = ITEMS.register("aerosteel_rod",
+            () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> AEROSTEEL_INGOT = ITEMS.register("aerosteel_ingot",
             () -> new Item(new Item.Properties()));
     public static final RegistryObject<Item> ENGINE_PROPELLER = ITEMS.register("engine_propeller",

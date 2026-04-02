@@ -7,18 +7,18 @@
       "item": "rockets_aint_cheap:aerosteel_plate"
     },
     "%": {
-      "item": "ad_astra:gas_tank"
+      "item": "ad_astra:engine_frame"
     },
-    "-": {
-      "item": "rockets_aint_cheap:aerosteel_rod"
+    "X": {
+      "item": "rockets_aint_cheap:engine_propeller"
     }
   },
   "pattern": [
-    "## ",
-    "#%-",
-    "## "
+    "###",
+    "#%#",
+    " X "
   ],
   "result": {
-    "item": "ad_astra:steel_tank"
+    "item": "ad_astra:steel_engine"
   }
 }
