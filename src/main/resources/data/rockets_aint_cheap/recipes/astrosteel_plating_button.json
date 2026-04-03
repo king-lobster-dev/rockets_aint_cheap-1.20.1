@@ -1,0 +1,12 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "category": "misc",
+  "ingredients": [
+    {
+      "item": "rockets_aint_cheap:astrosteel_plating"
+    }
+  ],
+  "result": {
+    "item": "rockets_aint_cheap:astrosteel_plating_button"
+  }
+}
