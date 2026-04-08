@@ -13,6 +13,7 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, "rockets_aint_cheap");
 
+    @SuppressWarnings("unused")
     public static final RegistryObject<CreativeModeTab> ROCKETS_AINT_CHEAP_TAB = CREATIVE_MODE_TABS.register("rockets_aint_cheap_tab",
             () -> CreativeModeTab.builder()
                     .icon(() -> new ItemStack(ModItems.ASTROSTEEL_PLATE.get()))

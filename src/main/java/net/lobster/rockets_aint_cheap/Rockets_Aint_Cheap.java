@@ -19,7 +19,6 @@ import net.minecraftforge.fml.javafmlmod.FMLJavaModLoadingContext;
 
 @Mod("rockets_aint_cheap")
 public class Rockets_Aint_Cheap {
-    public static final String MOD_ID = "rockets_aint_cheap";
 
     public Rockets_Aint_Cheap(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
