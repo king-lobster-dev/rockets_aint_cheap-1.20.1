@@ -1,29 +1,44 @@
 package net.lobster.rockets_aint_cheap.world;
 
-import net.lobster.rockets_aint_cheap.config.PlanetConfigs;
-import net.minecraftforge.event.level.LevelEvent;
+import com.mojang.logging.LogUtils;
+import net.lobster.rockets_aint_cheap.config.OrbitConfig;
+import net.minecraft.server.level.ServerLevel;
+import net.minecraft.world.level.ChunkPos;
+import net.minecraftforge.event.level.ChunkEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
-import net.minecraft.server.level.ServerLevel;
-import net.minecraft.core.BlockPos;
+import org.slf4j.Logger;
 
-@Mod.EventBusSubscriber
+@Mod.EventBusSubscriber(modid = "rockets_aint_cheap")
 public class AsteroidEvents {
 
-    // You can set the default space station position for simplicity.
-    // In practice, you might store/load the actual station coordinates per dimension.
-    private static final BlockPos DEFAULT_STATION_POS = new BlockPos(0, 150, 0);
+    private static final Logger LOGGER = LogUtils.getLogger();
 
     @SubscribeEvent
-    public static void onWorldLoad(LevelEvent.Load event) {
-        if (!(event.getLevel() instanceof ServerLevel level)) return;
+    public static void onChunkLoad(ChunkEvent.Load event) {
 
-        String dim = level.dimension().location().getPath();
+        // Debug: event fired
+        LOGGER.info("[Asteroids] ChunkEvent.Load fired");
 
-        // Only trigger for configured orbit dimensions
-        if (!PlanetConfigs.PLANETS.containsKey(dim)) return;
+        if (!(event.getLevel() instanceof ServerLevel level)) {
+            LOGGER.info("[Asteroids] Not a ServerLevel, skipping");
+            return;
+        }
 
-        // Generate asteroids for this dimension
-        AsteroidGenerator.generateAsteroids(level, DEFAULT_STATION_POS);
+        String dim = level.dimension().location().toString();
+
+        LOGGER.info("[Asteroids] Dimension: {}", dim);
+
+        // Only run in orbit dimensions
+        if (!OrbitConfig.ASTEROID_CONFIGS.containsKey(dim)) {
+            LOGGER.info("[Asteroids] Not an orbit dimension, skipping");
+            return;
+        }
+
+        ChunkPos chunkPos = event.getChunk().getPos();
+
+        LOGGER.info("[Asteroids] Generating in chunk: {}", chunkPos);
+
+        AsteroidGenerator.generateChunkAsteroids(level, chunkPos);
     }
 }
