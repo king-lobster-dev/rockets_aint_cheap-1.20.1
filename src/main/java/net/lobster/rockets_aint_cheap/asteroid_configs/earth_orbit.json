@@ -1,0 +1,47 @@
+{
+  "dimension": "ad_astra:earth_orbit",
+
+  "chunkSpawnChance": 0.07,
+  "minY": -40,
+  "maxY": 200,
+
+  "safeRadius": 32,
+  "center": [0, 120, 0],
+
+  "sizeWeights": [0.6, 0.2, 0.1, 0.1],
+  "sizeRanges": [
+    [2, 3],
+    [4, 5],
+    [6, 8],
+    [9, 14]
+  ],
+
+  "minBlobCount": 5,
+  "maxBlobCount": 7,
+
+  "blobSizeMin": 0.5,
+  "blobSizeMax": 1.0,
+
+  "blobOffsetMin": -0.6,
+  "blobOffsetMax": 0.6,
+
+  "asteroidTypes": [
+    {
+      "outerShellBlock": "minecraft:stone",
+      "outerShellOre": "minecraft:iron_ore",
+      "outerShellSecondaryBlock": "minecraft:andesite",
+
+      "outerShellOreChance": 0.1,
+      "outerShellSecondaryBlockChance": 0.15,
+
+      "innerShellBlock": "minecraft:deepslate",
+      "innerShellOre": "minecraft:coal_ore",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "minecraft:diamond_ore",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 1.0
+    }
+  ]
+}
