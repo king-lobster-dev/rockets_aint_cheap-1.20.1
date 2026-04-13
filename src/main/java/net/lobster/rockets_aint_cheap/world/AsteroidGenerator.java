@@ -10,33 +10,25 @@ import net.minecraft.world.level.block.state.BlockState;
 
 public class AsteroidGenerator {
 
-    private static final int SAFE_RADIUS = 20;
-    private static final BlockPos CENTER = new BlockPos(0, 120, 0);
-
-    private static final int MIN_Y = -100;
-    private static final int MAX_Y = 200;
-
-    //Called for EACH chunk load
     public static void generateChunkAsteroids(ServerLevel level, ChunkPos chunkPos) {
+
         String dim = level.dimension().location().toString();
         AsteroidConfig config = OrbitConfig.ASTEROID_CONFIGS.get(dim);
         if (config == null) return;
 
-        RandomSource random = RandomSource.create(
-                chunkPos.x * 341873128712L + chunkPos.z * 132897987541L
-        );
+        RandomSource random = level.getRandom();
 
-        // Chance per chunk (controls density)
-        if (random.nextFloat() > 0.15f) return;
+        // Spawn chance
+        if (random.nextFloat() > config.chunkSpawnChance) return;
 
         int x = chunkPos.getMinBlockX() + random.nextInt(16);
         int z = chunkPos.getMinBlockZ() + random.nextInt(16);
-        int y = MIN_Y + random.nextInt(MAX_Y - MIN_Y + 1);
+        int y = config.minY + random.nextInt(config.maxY - config.minY + 1);
 
         BlockPos center = new BlockPos(x, y, z);
 
-        // Safe zone around origin
-        if (center.closerThan(CENTER, SAFE_RADIUS)) return;
+        // Safe zone
+        if (center.closerThan(config.center, config.safeRadius)) return;
 
         AsteroidConfig.AsteroidType type = config.pickRandomType(random);
 
@@ -49,34 +41,88 @@ public class AsteroidGenerator {
                                                AsteroidConfig config,
                                                AsteroidConfig.AsteroidType type) {
 
-        int radius = config.minAsteroidSize +
-                random.nextInt(config.maxAsteroidSize - config.minAsteroidSize + 1);
+        int radius = config.getWeightedRadius(random);
+
+        int blobCount = config.minBlobCount +
+                random.nextInt(config.maxBlobCount - config.minBlobCount + 1);
+
+        BlockPos[] blobCenters = new BlockPos[blobCount];
+        double[] blobRadii = new double[blobCount];
+
+        // Generate blobs
+        for (int i = 0; i < blobCount; i++) {
+
+            int offsetX = (int)((random.nextDouble() *
+                    (config.blobOffsetMax - config.blobOffsetMin) + config.blobOffsetMin) * radius);
+
+            int offsetY = (int)((random.nextDouble() *
+                    (config.blobOffsetMax - config.blobOffsetMin) + config.blobOffsetMin) * radius);
+
+            int offsetZ = (int)((random.nextDouble() *
+                    (config.blobOffsetMax - config.blobOffsetMin) + config.blobOffsetMin) * radius);
+
+            blobCenters[i] = center.offset(offsetX, offsetY, offsetZ);
+
+            blobRadii[i] = radius * (
+                    config.blobSizeMin +
+                            random.nextDouble() * (config.blobSizeMax - config.blobSizeMin)
+            );
+        }
+
+        int maxBlobRadius = (int)(radius * config.blobSizeMax);
+        int maxOffset = (int)(radius * Math.max(Math.abs(config.blobOffsetMin), Math.abs(config.blobOffsetMax)));
+        int bound = maxBlobRadius + maxOffset;
 
         for (BlockPos pos : BlockPos.betweenClosed(
-                center.offset(-radius, -radius, -radius),
-                center.offset(radius, radius, radius))) {
+                center.offset(-bound, -bound, -bound),
+                center.offset(bound, bound, bound))) {
 
-            double dist = pos.distSqr(center);
-            if (dist > radius * radius) continue;
+            boolean inside = false;
+            double minRatio = Double.MAX_VALUE;
 
-            double ratio = Math.sqrt(dist) / radius;
+            for (int i = 0; i < blobCount; i++) {
 
+                double dx = pos.getX() - blobCenters[i].getX();
+                double dy = pos.getY() - blobCenters[i].getY();
+                double dz = pos.getZ() - blobCenters[i].getZ();
+
+                double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+
+                if (dist < blobRadii[i]) {
+                    inside = true;
+
+                    double ratio = dist / blobRadii[i];
+                    if (ratio < minRatio) minRatio = ratio;
+                }
+            }
+
+            if (!inside) continue;
+
+            double ratio = minRatio;
             BlockState block;
 
-            // Outer shell
+            // Outer
             if (ratio > 0.6) {
-                block = random.nextDouble() < type.outerShellOreChance
-                        ? type.outerShellOre.defaultBlockState()
-                        : type.outerShellBlock.defaultBlockState();
+
+                double roll = random.nextDouble();
+
+                if (roll < type.outerShellOreChance) {
+                    block = type.outerShellOre.defaultBlockState();
+                }
+                else if (roll < type.outerShellOreChance + type.outerShellSecondaryBlockChance) {
+                    block = type.outerShellSecondaryBlock.defaultBlockState();
+                }
+                else {
+                    block = type.outerShellBlock.defaultBlockState();
+                }
             }
-            // Inner shell
             else {
                 block = random.nextDouble() < type.innerShellOreChance
                         ? type.innerShellOre.defaultBlockState()
                         : type.innerShellBlock.defaultBlockState();
             }
 
-            // Rich core
+            // Core
             if (ratio < 0.25 && random.nextDouble() < type.coreOreChance) {
                 block = type.coreOre.defaultBlockState();
             }

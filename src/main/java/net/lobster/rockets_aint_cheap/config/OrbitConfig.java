@@ -1,9 +1,8 @@
 package net.lobster.rockets_aint_cheap.config;
 
-import net.minecraft.world.level.block.Blocks;
+import net.minecraft.core.BlockPos;
 
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 public class OrbitConfig {
@@ -12,84 +11,40 @@ public class OrbitConfig {
 
     static {
 
-
-        // EARTH ORBIT
+        // ===== EARTH ORBIT =====
         AsteroidConfig earth = new AsteroidConfig();
-        earth.asteroidCount = 800;
-        earth.minAsteroidSize = 4;
-        earth.maxAsteroidSize = 14;
 
-        earth.asteroidTypes = List.of(
+        earth.chunkSpawnChance = 0.07f;
+        earth.minY = -40;
+        earth.maxY = 200;
 
-                new AsteroidConfig.AsteroidType(
-                        "iron",
-                        Blocks.STONE, Blocks.IRON_ORE, 0.1,
-                        Blocks.DEEPSLATE, Blocks.DEEPSLATE_IRON_ORE, 0.25,
-                        Blocks.IRON_BLOCK, 0.05,
-                        0.4
-                ),
+        earth.safeRadius = 32;
+        earth.center = new BlockPos(0, 120, 0);
 
-                new AsteroidConfig.AsteroidType(
-                        "copper",
-                        Blocks.STONE, Blocks.COPPER_ORE, 0.1,
-                        Blocks.DEEPSLATE, Blocks.COPPER_ORE, 0.25,
-                        Blocks.COPPER_BLOCK, 0.05,
-                        0.3
-                ),
+        // Size distribution
+        earth.sizeWeights = new double[]{0.6, 0.2, 0.1, 0.1};
+        earth.sizeRanges = new int[][]{
+                {2, 3},
+                {4, 5},
+                {6, 8},
+                {9, 14}
+        };
 
-                new AsteroidConfig.AsteroidType(
-                        "gold",
-                        Blocks.STONE, Blocks.GOLD_ORE, 0.1,
-                        Blocks.DEEPSLATE, Blocks.DEEPSLATE_GOLD_ORE, 0.25,
-                        Blocks.GOLD_BLOCK, 0.05,
-                        0.2
-                ),
+        // Blob behavior
+        earth.minBlobCount = 5;
+        earth.maxBlobCount = 7;
 
-                new AsteroidConfig.AsteroidType(
-                        "coal_diamond",
-                        Blocks.STONE, Blocks.COAL_ORE, 0.15,
-                        Blocks.DEEPSLATE, Blocks.DEEPSLATE_DIAMOND_ORE, 0.3,
-                        Blocks.DIAMOND_BLOCK, 0.03,
-                        0.1
-                )
-        );
+        earth.blobSizeMin = 0.5;
+        earth.blobSizeMax = 1.0;
+
+        earth.blobOffsetMin = -0.6;
+        earth.blobOffsetMax = 0.6;
+
+        // TODO: add asteroidTypes here
+        // earth.asteroidTypes = List.of(...);
 
         ASTEROID_CONFIGS.put("ad_astra:earth_orbit", earth);
 
-
-        // MARS ORBIT
-        AsteroidConfig mars = new AsteroidConfig();
-        mars.asteroidCount = 400;
-        mars.minAsteroidSize = 6;
-        mars.maxAsteroidSize = 16;
-
-        mars.asteroidTypes = List.of(
-
-                new AsteroidConfig.AsteroidType(
-                        "mars_iron",
-                        Blocks.RED_SANDSTONE, Blocks.IRON_ORE, 0.15,
-                        Blocks.DEEPSLATE, Blocks.DEEPSLATE_IRON_ORE, 0.3,
-                        Blocks.IRON_BLOCK, 0.05,
-                        0.5
-                ),
-
-                new AsteroidConfig.AsteroidType(
-                        "mars_gold",
-                        Blocks.RED_SANDSTONE, Blocks.GOLD_ORE, 0.15,
-                        Blocks.DEEPSLATE, Blocks.DEEPSLATE_GOLD_ORE, 0.3,
-                        Blocks.GOLD_BLOCK, 0.05,
-                        0.3
-                ),
-
-                new AsteroidConfig.AsteroidType(
-                        "mars_copper",
-                        Blocks.RED_SANDSTONE, Blocks.COPPER_ORE, 0.15,
-                        Blocks.DEEPSLATE, Blocks.COPPER_ORE, 0.3,
-                        Blocks.COPPER_BLOCK, 0.05,
-                        0.2
-                )
-        );
-
-        ASTEROID_CONFIGS.put("ad_astra:mars_orbit", mars);
+        // ===== ADD MORE ORBITS HERE =====
     }
 }
