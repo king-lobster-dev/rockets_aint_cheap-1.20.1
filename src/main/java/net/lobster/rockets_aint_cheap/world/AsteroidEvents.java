@@ -18,13 +18,10 @@ public class AsteroidEvents {
 
     private static final Logger LOGGER = LogUtils.getLogger();
 
-    // Queue of chunks waiting for delayed generation
     private static final Set<ChunkTask> QUEUE = new HashSet<>();
 
-    // Delay before generating (ticks)
-    private static final int DELAY_TICKS = 40; // ~2 seconds
+    private static final int DELAY_TICKS = 40;
 
-    // Fires when a chunk loads
     @SubscribeEvent
     public static void onChunkLoad(ChunkEvent.Load event) {
 
@@ -32,51 +29,61 @@ public class AsteroidEvents {
 
         String dim = level.dimension().location().toString();
 
-        LOGGER.info("[Asteroids] ChunkEvent.Load fired in {}", dim);
-
-        // Only run in configured orbit dimensions
         if (!OrbitConfig.ASTEROID_CONFIGS.containsKey(dim)) return;
 
         ChunkPos chunkPos = event.getChunk().getPos();
+        String key = getChunkKey(dim, chunkPos);
 
-        LOGGER.info("[Asteroids] Queuing chunk {}", chunkPos);
+        AsteroidSavedData data = AsteroidSavedData.get(level);
 
-        // Add to queue with delay
-        QUEUE.add(new ChunkTask(level, chunkPos, DELAY_TICKS));
+        // Persistent check
+        if (data.isGenerated(key)) return;
+
+        LOGGER.info("[Asteroids] Queuing chunk {}", key);
+
+        QUEUE.add(new ChunkTask(level, chunkPos, DELAY_TICKS, key));
     }
 
-    // Processes queued asteroid generation safely
     @SubscribeEvent
     public static void onServerTick(TickEvent.ServerTickEvent event) {
 
         if (event.phase != TickEvent.Phase.END) return;
 
-        // Iterate over COPY to avoid ConcurrentModificationException
         Set<ChunkTask> tasks = new HashSet<>(QUEUE);
 
         for (ChunkTask task : tasks) {
             task.ticks--;
 
             if (task.ticks <= 0) {
-                LOGGER.info("[Asteroids] Generating asteroid in {}", task.chunkPos);
+
+                LOGGER.info("[Asteroids] Generating asteroid in {}", task.key);
 
                 AsteroidGenerator.generateChunkAsteroids(task.level, task.chunkPos);
 
-                QUEUE.remove(task); // safe because we're iterating copy
+                // Save permanently
+                AsteroidSavedData data = AsteroidSavedData.get(task.level);
+                data.markGenerated(task.key);
+
+                QUEUE.remove(task);
             }
         }
     }
 
-    // Internal task for delayed generation
+    private static String getChunkKey(String dim, ChunkPos pos) {
+        return dim + ":" + pos.x + "," + pos.z;
+    }
+
     private static class ChunkTask {
         ServerLevel level;
         ChunkPos chunkPos;
         int ticks;
+        String key;
 
-        ChunkTask(ServerLevel level, ChunkPos chunkPos, int ticks) {
+        ChunkTask(ServerLevel level, ChunkPos chunkPos, int ticks, String key) {
             this.level = level;
             this.chunkPos = chunkPos;
             this.ticks = ticks;
+            this.key = key;
         }
     }
 }
