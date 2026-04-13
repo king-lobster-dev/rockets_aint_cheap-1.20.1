@@ -1,11 +1,12 @@
 package net.lobster.rockets_aint_cheap.world;
 
 import com.mojang.logging.LogUtils;
-import net.lobster.rockets_aint_cheap.config.OrbitConfig;
+import net.lobster.rockets_aint_cheap.config.AsteroidConfigLoader;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraftforge.event.TickEvent;
 import net.minecraftforge.event.level.ChunkEvent;
+import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
 import net.minecraftforge.fml.common.Mod;
 import org.slf4j.Logger;
@@ -29,7 +30,7 @@ public class AsteroidEvents {
 
         String dim = level.dimension().location().toString();
 
-        if (!OrbitConfig.ASTEROID_CONFIGS.containsKey(dim)) return;
+        if (!AsteroidConfigLoader.LOADED_CONFIGS.containsKey(dim)) return;
 
         ChunkPos chunkPos = event.getChunk().getPos();
         String key = getChunkKey(dim, chunkPos);
@@ -67,6 +68,14 @@ public class AsteroidEvents {
                 QUEUE.remove(task);
             }
         }
+    }
+
+    @SubscribeEvent
+    public static void onServerStarting(ServerStartingEvent event) {
+        var server = event.getServer();
+        var level = server.overworld();
+
+        AsteroidConfigLoader.load(server.getResourceManager(), level);
     }
 
     private static String getChunkKey(String dim, ChunkPos pos) {

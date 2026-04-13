@@ -1,7 +1,7 @@
 package net.lobster.rockets_aint_cheap.world;
 
 import net.lobster.rockets_aint_cheap.config.AsteroidConfig;
-import net.lobster.rockets_aint_cheap.config.OrbitConfig;
+import net.lobster.rockets_aint_cheap.config.AsteroidConfigLoader;
 import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.util.RandomSource;
@@ -13,7 +13,7 @@ public class AsteroidGenerator {
     public static void generateChunkAsteroids(ServerLevel level, ChunkPos chunkPos) {
 
         String dim = level.dimension().location().toString();
-        AsteroidConfig config = OrbitConfig.ASTEROID_CONFIGS.get(dim);
+        AsteroidConfig config = AsteroidConfigLoader.LOADED_CONFIGS.get(dim);
         if (config == null) return;
 
         RandomSource random = level.getRandom();
