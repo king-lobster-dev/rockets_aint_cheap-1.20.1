@@ -14,7 +14,7 @@ import org.slf4j.Logger;
 import java.util.HashSet;
 import java.util.Set;
 
-@Mod.EventBusSubscriber(modid = "rockets_aint_cheap")
+@Mod.EventBusSubscriber(modid = "rockets_aint_cheap", bus = Mod.EventBusSubscriber.Bus.FORGE)
 public class AsteroidEvents {
 
     private static final Logger LOGGER = LogUtils.getLogger();
@@ -30,8 +30,6 @@ public class AsteroidEvents {
 
         String dim = level.dimension().location().toString();
 
-        if (!AsteroidConfigLoader.LOADED_CONFIGS.containsKey(dim)) return;
-
         ChunkPos chunkPos = event.getChunk().getPos();
         String key = getChunkKey(dim, chunkPos);
 
@@ -39,8 +37,6 @@ public class AsteroidEvents {
 
         // Persistent check
         if (data.isGenerated(key)) return;
-
-        LOGGER.info("[Asteroids] Queuing chunk {}", key);
 
         QUEUE.add(new ChunkTask(level, chunkPos, DELAY_TICKS, key));
     }
@@ -56,9 +52,6 @@ public class AsteroidEvents {
             task.ticks--;
 
             if (task.ticks <= 0) {
-
-                LOGGER.info("[Asteroids] Generating asteroid in {}", task.key);
-
                 AsteroidGenerator.generateChunkAsteroids(task.level, task.chunkPos);
 
                 // Save permanently
@@ -72,10 +65,37 @@ public class AsteroidEvents {
 
     @SubscribeEvent
     public static void onServerStarting(ServerStartingEvent event) {
+
+        LOGGER.info("[Asteroids] Server starting event fired");
+
         var server = event.getServer();
         var level = server.overworld();
 
-        AsteroidConfigLoader.load(server.getResourceManager(), level);
+        var resourceManager = server.getResourceManager();
+
+        // config list
+        var resources = resourceManager.listResources(
+                "asteroid_configs",
+                rl -> rl.getPath().endsWith(".json")
+        );
+
+        LOGGER.info("[Asteroids] Resource count: {}", resources.size());
+
+        for (var entry : resources.entrySet()) {
+            LOGGER.info("[Asteroids] Found resource: {}", entry.getKey());
+        }
+
+        // config load confirmation
+        AsteroidConfigLoader.load(resourceManager, level);
+
+        LOGGER.info("[Asteroids] Finished loading asteroid configs");
+
+
+        String dim = level.dimension().location().toString();
+
+        if (!AsteroidConfigLoader.LOADED_CONFIGS.containsKey(dim)) {
+            LOGGER.info("[Asteroids] No config found for {}, skipping", dim);
+        }
     }
 
     private static String getChunkKey(String dim, ChunkPos pos) {

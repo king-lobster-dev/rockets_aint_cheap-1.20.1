@@ -1,0 +1,119 @@
+{
+  "dimension": "ad_astra:venus_orbit",
+
+  "chunkSpawnChance": 0.28,
+  "minY": -40,
+  "maxY": 200,
+
+  "safeRadius": 50,
+  "center": [0, 120, 0],
+
+  "sizeWeights": [0.74, 0.10, 0.08, 0.08],
+  "sizeRanges": [
+    [2, 3],
+    [4, 5],
+    [6, 7],
+    [8, 10]
+  ],
+
+  "minBlobCount": 3,
+  "maxBlobCount": 7,
+
+  "blobSizeMin": 0.4,
+  "blobSizeMax": 0.7,
+
+  "blobOffsetMin": -0.5,
+  "blobOffsetMax": 0.5,
+
+  "asteroidTypes": [
+    {
+      "outerShellBlock": "ad_astra:venus_stone",
+      "outerShellOre": "ad_astra:venus_coal_ore",
+      "outerShellSecondaryBlock": "ad_astra:venus_stone",
+
+      "outerShellOreChance": 0.12,
+      "outerShellSecondaryBlockChance": 0.0,
+
+      "innerShellBlock": "minecraft:blackstone",
+      "innerShellOre": "ad_astra:mars_iron_ore",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "minecraft:raw_iron_block",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.40
+    },
+
+    {
+      "outerShellBlock": "minecraft:snow_block",
+      "outerShellOre": "minecraft:snow_block",
+      "outerShellSecondaryBlock": "minecraft:packed_ice",
+
+      "outerShellOreChance": 0.0,
+      "outerShellSecondaryBlockChance": 0.4,
+
+      "innerShellBlock": "minecraft:packed_ice",
+      "innerShellOre": "minecraft:blue_ice",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "minecraft:blue_ice",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.20
+    },
+
+    {
+      "outerShellBlock": "ad_astra:conglomerate",
+      "outerShellOre": "ad_astra:conglomerate",
+      "outerShellSecondaryBlock": "ad_astra:conglomerate",
+
+      "outerShellOreChance": 0.0,
+      "outerShellSecondaryBlockChance": 0.0,
+
+      "innerShellBlock": "ad_astra:conglomerate",
+      "innerShellOre": "ad_astra:conglomerate",
+      "innerShellOreChance": 0.0,
+
+      "coreOre": "ad_astra:conglomerate",
+      "coreOreChance": 0.0,
+
+      "spawnChance": 0.22
+    },
+
+    {
+      "outerShellBlock": "ad_astra:mars_stone",
+      "outerShellOre": "ad_astra:mars_ice_shard_ore",
+      "outerShellSecondaryBlock": "ad_astra:mars_stone",
+
+      "outerShellOreChance": 0.08,
+      "outerShellSecondaryBlockChance": 0.0,
+
+      "innerShellBlock": "ad_astra:mars_stone",
+      "innerShellOre": "ad_astra:mars_diamond_ore",
+      "innerShellOreChance": 0.20,
+
+      "coreOre": "ad_astra:mars_diamond_ore",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.10
+    },
+
+    {
+      "outerShellBlock": "ad_astra:mars_stone",
+      "outerShellOre": "ad_astra:mars_ice_shard_ore",
+      "outerShellSecondaryBlock": "ad_astra:mars_stone",
+
+      "outerShellOreChance": 0.08,
+      "outerShellSecondaryBlockChance": 0.0,
+
+      "innerShellBlock": "ad_astra:mars_stone",
+      "innerShellOre": "ad_astra:mars_ostrum_ore",
+      "innerShellOreChance": 0.14,
+
+      "coreOre": "ad_astra:raw_ostrum_block",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.08
+    }
+  ]
+}

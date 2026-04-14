@@ -53,7 +53,5 @@ public class AsteroidSavedData extends SavedData {
     public void markGenerated(String key) {
         generatedChunks.add(key);
         setDirty();
-
-        System.out.println("[Asteroids] SAVED chunk key: " + key);
     }
 }

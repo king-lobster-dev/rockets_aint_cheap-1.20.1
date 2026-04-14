@@ -86,12 +86,12 @@ public class AsteroidGenerator {
                 double dy = pos.getY() - blobCenters[i].getY();
                 double dz = pos.getZ() - blobCenters[i].getZ();
 
-                double dist = Math.sqrt(dx * dx + dy * dy + dz * dz);
+                double distSq = dx * dx + dy * dy + dz * dz;
 
-                if (dist < blobRadii[i]) {
+                if (distSq < blobRadii[i] * blobRadii[i]) {
                     inside = true;
 
-                    double ratio = dist / blobRadii[i];
+                    double ratio = Math.sqrt(distSq) / blobRadii[i];
                     if (ratio < minRatio) minRatio = ratio;
                 }
             }

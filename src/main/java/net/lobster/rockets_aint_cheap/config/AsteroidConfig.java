@@ -8,7 +8,7 @@ import java.util.List;
 
 public class AsteroidConfig {
 
-    // ===== SPAWNING =====
+    // SPAWNING
     public float chunkSpawnChance;
     public int minY;
     public int maxY;
@@ -16,11 +16,11 @@ public class AsteroidConfig {
     public int safeRadius;
     public BlockPos center;
 
-    // ===== SIZE DISTRIBUTION =====
+    // SIZE DISTRIBUTION
     public double[] sizeWeights;   // must sum ~1.0
     public int[][] sizeRanges;     // { {min,max}, ... }
 
-    // ===== BLOB SHAPE =====
+    // BLOB SHAPE
     public int minBlobCount;
     public int maxBlobCount;
 
@@ -30,10 +30,10 @@ public class AsteroidConfig {
     public double blobOffsetMin;
     public double blobOffsetMax;
 
-    // ===== ASTEROID TYPES =====
+    // ASTEROID TYPES
     public List<AsteroidType> asteroidTypes;
 
-    // ===== TYPE PICKING =====
+    // TYPE PICKING
     public AsteroidType pickRandomType(RandomSource random) {
         double totalWeight = asteroidTypes.stream().mapToDouble(t -> t.spawnChance).sum();
         double r = random.nextDouble() * totalWeight;
@@ -47,7 +47,7 @@ public class AsteroidConfig {
         return asteroidTypes.get(0);
     }
 
-    // ===== SIZE PICKING =====
+    // SIZE PICKING
     public int getWeightedRadius(RandomSource random) {
         double roll = random.nextDouble();
         double cumulative = 0;
@@ -64,7 +64,7 @@ public class AsteroidConfig {
         return sizeRanges[0][0];
     }
 
-    // ===== INNER CLASS =====
+    // INNER CLASS
     public static class AsteroidType {
         public Block outerShellBlock;
         public Block outerShellOre;

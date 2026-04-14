@@ -1,0 +1,119 @@
+{
+  "dimension": "ad_astra:earth_orbit",
+
+  "chunkSpawnChance": 0.24,
+  "minY": -40,
+  "maxY": 200,
+
+  "safeRadius": 50,
+  "center": [0, 120, 0],
+
+  "sizeWeights": [0.7, 0.14, 0.09, 0.07],
+  "sizeRanges": [
+    [2, 5],
+    [6, 7],
+    [8, 9],
+    [10, 12]
+  ],
+
+  "minBlobCount": 3,
+  "maxBlobCount": 7,
+
+  "blobSizeMin": 0.4,
+  "blobSizeMax": 0.7,
+
+  "blobOffsetMin": -0.5,
+  "blobOffsetMax": 0.5,
+
+  "asteroidTypes": [
+    {
+      "outerShellBlock": "minecraft:stone",
+      "outerShellOre": "minecraft:iron_ore",
+      "outerShellSecondaryBlock": "minecraft:tuff",
+
+      "outerShellOreChance": 0.12,
+      "outerShellSecondaryBlockChance": 0.4,
+
+      "innerShellBlock": "minecraft:deepslate",
+      "innerShellOre": "minecraft:deepslate_iron_ore",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "minecraft:raw_iron_block",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.42
+    },
+
+    {
+          "outerShellBlock": "minecraft:stone",
+          "outerShellOre": "minecraft:copper_ore",
+          "outerShellSecondaryBlock": "minecraft:granite",
+
+          "outerShellOreChance": 0.12,
+          "outerShellSecondaryBlockChance": 0.4,
+
+          "innerShellBlock": "minecraft:deepslate",
+          "innerShellOre": "minecraft:deepslate_copper_ore",
+          "innerShellOreChance": 0.25,
+
+          "coreOre": "minecraft:raw_copper_block",
+          "coreOreChance": 0.05,
+
+          "spawnChance": 0.28
+    },
+
+    {
+      "outerShellBlock": "minecraft:stone",
+      "outerShellOre": "minecraft:gold_ore",
+      "outerShellSecondaryBlock": "minecraft:andesite",
+
+      "outerShellOreChance": 0.10,
+      "outerShellSecondaryBlockChance": 0.4,
+
+      "innerShellBlock": "minecraft:deepslate",
+      "innerShellOre": "minecraft:deepslate_gold_ore",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "minecraft:raw_gold_block",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.14
+    },
+
+    {
+      "outerShellBlock": "minecraft:stone",
+      "outerShellOre": "minecraft:coal_ore",
+      "outerShellSecondaryBlock": "minecraft:coal_ore",
+
+      "outerShellOreChance": 0.04,
+      "outerShellSecondaryBlockChance": 0.4,
+
+      "innerShellBlock": "minecraft:deepslate",
+      "innerShellOre": "minecraft:deepslate_coal_ore",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "minecraft:coal_block",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.10
+    },
+
+    {
+      "outerShellBlock": "minecraft:stone",
+      "outerShellOre": "minecraft:coal_ore",
+      "outerShellSecondaryBlock": "minecraft:coal_ore",
+
+      "outerShellOreChance": 0.10,
+      "outerShellSecondaryBlockChance": 0.4,
+
+      "innerShellBlock": "minecraft:deepslate",
+      "innerShellOre": "minecraft:deepslate_diamond_ore",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "minecraft:deepslate_diamond_ore",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.06
+    }
+  ]
+}
