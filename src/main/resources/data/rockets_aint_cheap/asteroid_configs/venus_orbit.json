@@ -29,91 +29,68 @@
     {
       "outerShellBlock": "ad_astra:venus_stone",
       "outerShellOre": "ad_astra:venus_coal_ore",
-      "outerShellSecondaryBlock": "ad_astra:venus_stone",
+      "outerShellSecondaryBlock": "ad_astra:venus_cobblestone",
 
       "outerShellOreChance": 0.12,
-      "outerShellSecondaryBlockChance": 0.0,
+      "outerShellSecondaryBlockChance": 0.3,
 
-      "innerShellBlock": "minecraft:blackstone",
-      "innerShellOre": "ad_astra:mars_iron_ore",
+      "innerShellBlock": "ad_astra:venus_stone",
+      "innerShellOre": "ad_astra:venus_coal_ore",
       "innerShellOreChance": 0.25,
 
-      "coreOre": "minecraft:raw_iron_block",
+      "coreOre": "minecraft:coal_block",
       "coreOreChance": 0.05,
 
-      "spawnChance": 0.40
+      "spawnChance": 0.35
     },
 
     {
-      "outerShellBlock": "minecraft:snow_block",
-      "outerShellOre": "minecraft:snow_block",
-      "outerShellSecondaryBlock": "minecraft:packed_ice",
+      "outerShellBlock": "ad_astra:venus_stone",
+      "outerShellOre": "ad_astra:venus_gold_ore",
+      "outerShellSecondaryBlock": "ad_astra:venus_cobblestone",
 
-      "outerShellOreChance": 0.0,
-      "outerShellSecondaryBlockChance": 0.4,
+      "outerShellOreChance": 0.12,
+      "outerShellSecondaryBlockChance": 0.3,
 
-      "innerShellBlock": "minecraft:packed_ice",
-      "innerShellOre": "minecraft:blue_ice",
+      "innerShellBlock": "minecraft:blackstone",
+      "innerShellOre": "ad_astra:venus_gold_ore",
       "innerShellOreChance": 0.25,
 
-      "coreOre": "minecraft:blue_ice",
+      "coreOre": "minecraft:raw_gold_block",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.35
+    },
+
+    {
+      "outerShellBlock": "ad_astra:venus_stone",
+      "outerShellOre": "ad_astra:venus_diamond_ore",
+      "outerShellSecondaryBlock": "ad_astra:venus_cobblestone",
+
+      "outerShellOreChance": 0.12,
+      "outerShellSecondaryBlockChance": 0.3,
+
+      "innerShellBlock": "minecraft:blackstone",
+      "innerShellOre": "ad_astra:venus_diamond_ore",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "ad_astra:venus_diamond_ore",
       "coreOreChance": 0.05,
 
       "spawnChance": 0.20
     },
-
     {
-      "outerShellBlock": "ad_astra:conglomerate",
-      "outerShellOre": "ad_astra:conglomerate",
-      "outerShellSecondaryBlock": "ad_astra:conglomerate",
-
+      "outerShellBlock": "ad_astra:venus_stone",
+      "outerShellOre": "ad_astra:venus_calorite_ore",
+      "outerShellSecondaryBlock": "ad_astra:venus_cobblestone",
       "outerShellOreChance": 0.0,
-      "outerShellSecondaryBlockChance": 0.0,
-
-      "innerShellBlock": "ad_astra:conglomerate",
-      "innerShellOre": "ad_astra:conglomerate",
-      "innerShellOreChance": 0.0,
-
-      "coreOre": "ad_astra:conglomerate",
-      "coreOreChance": 0.0,
-
-      "spawnChance": 0.22
-    },
-
-    {
-      "outerShellBlock": "ad_astra:mars_stone",
-      "outerShellOre": "ad_astra:mars_ice_shard_ore",
-      "outerShellSecondaryBlock": "ad_astra:mars_stone",
-
-      "outerShellOreChance": 0.08,
-      "outerShellSecondaryBlockChance": 0.0,
-
-      "innerShellBlock": "ad_astra:mars_stone",
-      "innerShellOre": "ad_astra:mars_diamond_ore",
-      "innerShellOreChance": 0.20,
-
-      "coreOre": "ad_astra:mars_diamond_ore",
+      "outerShellSecondaryBlockChance": 0.35,
+      "innerShellBlock": "minecraft:blackstone",
+      "innerShellOre": "ad_astra:venus_calorite_ore",
+      "innerShellOreChance": 0.25,
+      "coreOre": "ad_astra:raw_calorite_block",
       "coreOreChance": 0.05,
-
       "spawnChance": 0.10
-    },
-
-    {
-      "outerShellBlock": "ad_astra:mars_stone",
-      "outerShellOre": "ad_astra:mars_ice_shard_ore",
-      "outerShellSecondaryBlock": "ad_astra:mars_stone",
-
-      "outerShellOreChance": 0.08,
-      "outerShellSecondaryBlockChance": 0.0,
-
-      "innerShellBlock": "ad_astra:mars_stone",
-      "innerShellOre": "ad_astra:mars_ostrum_ore",
-      "innerShellOreChance": 0.14,
-
-      "coreOre": "ad_astra:raw_ostrum_block",
-      "coreOreChance": 0.05,
-
-      "spawnChance": 0.08
     }
   ]
 }

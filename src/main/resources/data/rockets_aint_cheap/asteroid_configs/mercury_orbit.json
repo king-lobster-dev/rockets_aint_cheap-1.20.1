@@ -1,0 +1,47 @@
+{
+  "dimension": "ad_astra:mercury_orbit",
+
+  "chunkSpawnChance": 0.28,
+  "minY": -40,
+  "maxY": 200,
+
+  "safeRadius": 50,
+  "center": [0, 120, 0],
+
+  "sizeWeights": [0.74, 0.10, 0.08, 0.08],
+  "sizeRanges": [
+    [2, 3],
+    [4, 5],
+    [6, 7],
+    [8, 10]
+  ],
+
+  "minBlobCount": 3,
+  "maxBlobCount": 7,
+
+  "blobSizeMin": 0.4,
+  "blobSizeMax": 0.7,
+
+  "blobOffsetMin": -0.5,
+  "blobOffsetMax": 0.5,
+
+  "asteroidTypes": [
+    {
+      "outerShellBlock": "ad_astra:mercury_stone",
+      "outerShellOre": "ad_astra:mercury_iron_ore",
+      "outerShellSecondaryBlock": "ad_astra:mercury_cobblestone",
+
+      "outerShellOreChance": 0.04,
+      "outerShellSecondaryBlockChance": 0.3,
+
+      "innerShellBlock": "minecraft:blackstone",
+      "innerShellOre": "ad_astra:mercury_iron_ore",
+      "innerShellOreChance": 0.25,
+
+      "coreOre": "minecraft:raw_iron_block",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 1.0
+    }
+  ]
+}
