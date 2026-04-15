@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+"category": "misc",
+"pattern": [
+" # ",
+" # ",
+"   "
+],
+"key": {
+"#": {
+"item": "rockets_aint_cheap:astrosteel_plate"}
+},
+"result": {
+"item": "rockets_aint_cheap:astrosteel_rod",
+"count": 4
+}
+}
