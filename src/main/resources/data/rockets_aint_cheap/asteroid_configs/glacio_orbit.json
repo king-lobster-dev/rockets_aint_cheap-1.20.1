@@ -1,0 +1,83 @@
+{
+  "dimension": "ad_astra:glacio_orbit",
+
+  "chunkSpawnChance": 0.28,
+  "minY": -40,
+  "maxY": 200,
+
+  "safeRadius": 32,
+
+  "sizeWeights": [0.74, 0.10, 0.08, 0.08],
+  "sizeRanges": [
+    [2, 3],
+    [4, 5],
+    [6, 7],
+    [8, 10]
+  ],
+
+  "minBlobCount": 3,
+  "maxBlobCount": 7,
+
+  "blobSizeMin": 0.4,
+  "blobSizeMax": 0.7,
+
+  "blobOffsetMin": -0.5,
+  "blobOffsetMax": 0.5,
+
+  "asteroidTypes": [
+
+    {
+          "outerShellBlock": "minecraft:snow_block",
+          "outerShellOre": "minecraft:snow_block",
+          "outerShellSecondaryBlock": "minecraft:packed_ice",
+
+          "outerShellOreChance": 0.0,
+          "outerShellSecondaryBlockChance": 0.4,
+
+          "innerShellBlock": "minecraft:packed_ice",
+          "innerShellOre": "ad_astra:permafrost",
+          "innerShellOreChance": 0.25,
+
+          "coreOre": "minecraft:blue_ice",
+          "coreOreChance": 0.05,
+
+          "spawnChance": 0.30
+    },
+
+    {
+      "outerShellBlock": "ad_astra:permafrost",
+      "outerShellOre": "minecraft:snow_block",
+      "outerShellSecondaryBlock": "minecraft:snow_block",
+
+      "outerShellOreChance": 0.5,
+      "outerShellSecondaryBlockChance": 0.0,
+
+      "innerShellBlock": "ad_astra:permafrost",
+      "innerShellOre": "ad_astra:permafrost",
+      "innerShellOreChance": 0.0,
+
+      "coreOre": "ad_astra:permafrost",
+      "coreOreChance": 0.0,
+
+      "spawnChance": 0.22
+    },
+
+    {
+      "outerShellBlock": "ad_astra:glacio_stone",
+      "outerShellOre": "ad_astra:glacio_ice_shard_ore",
+      "outerShellSecondaryBlock": "minecraft:snow_block",
+
+      "outerShellOreChance": 0.08,
+      "outerShellSecondaryBlockChance": 0.2,
+
+      "innerShellBlock": "ad_astra:glacio_stone",
+      "innerShellOre": "ad_astra:glacio_ice_shard_ore",
+      "innerShellOreChance": 0.20,
+
+      "coreOre": "ad_astra:glacio_ice_shard_ore",
+      "coreOreChance": 0.05,
+
+      "spawnChance": 0.48
+    }
+  ]
+}

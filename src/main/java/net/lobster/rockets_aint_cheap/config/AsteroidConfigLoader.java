@@ -74,13 +74,6 @@ public class AsteroidConfigLoader {
         config.maxY = json.get("maxY").getAsInt();
         config.safeRadius = json.get("safeRadius").getAsInt();
 
-        var centerArr = json.getAsJsonArray("center");
-        config.center = new net.minecraft.core.BlockPos(
-                centerArr.get(0).getAsInt(),
-                centerArr.get(1).getAsInt(),
-                centerArr.get(2).getAsInt()
-        );
-
         config.sizeWeights = GSON.fromJson(json.get("sizeWeights"), double[].class);
         config.sizeRanges = GSON.fromJson(json.get("sizeRanges"), int[][].class);
 

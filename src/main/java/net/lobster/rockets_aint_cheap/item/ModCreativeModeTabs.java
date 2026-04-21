@@ -23,10 +23,6 @@ public class ModCreativeModeTabs {
                         pOutput.accept(ModItems.ASTROSTEEL_ROD.get());
                         pOutput.accept(ModItems.ASTROSTEEL_INGOT.get());
                         pOutput.accept(ModItems.ENGINE_PROPELLER.get());
-                        pOutput.accept(ModItems.TIER_1_ROCKET_PANEL.get());
-                        pOutput.accept(ModItems.TIER_2_ROCKET_PANEL.get());
-                        pOutput.accept(ModItems.TIER_3_ROCKET_PANEL.get());
-                        pOutput.accept(ModItems.TIER_4_ROCKET_PANEL.get());
 
                         pOutput.accept(ModBlocks.ASTROSTEEL_BLOCK.get());
                         pOutput.accept(ModBlocks.ASTROSTEEL_FACTORY_BLOCK.get());
