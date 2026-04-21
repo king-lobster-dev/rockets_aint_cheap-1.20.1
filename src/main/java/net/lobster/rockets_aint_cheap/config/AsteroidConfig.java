@@ -1,6 +1,5 @@
 package net.lobster.rockets_aint_cheap.config;
 
-import net.minecraft.core.BlockPos;
 import net.minecraft.util.RandomSource;
 import net.minecraft.world.level.block.Block;
 
@@ -14,7 +13,6 @@ public class AsteroidConfig {
     public int maxY;
 
     public int safeRadius;
-    public BlockPos center;
 
     // SIZE DISTRIBUTION
     public double[] sizeWeights;   // must sum ~1.0

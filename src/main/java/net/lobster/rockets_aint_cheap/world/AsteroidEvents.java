@@ -2,9 +2,11 @@ package net.lobster.rockets_aint_cheap.world;
 
 import com.mojang.logging.LogUtils;
 import net.lobster.rockets_aint_cheap.config.AsteroidConfigLoader;
+import net.minecraft.core.BlockPos;
 import net.minecraft.server.level.ServerLevel;
 import net.minecraft.world.level.ChunkPos;
 import net.minecraftforge.event.TickEvent;
+import net.minecraftforge.event.entity.player.PlayerEvent;
 import net.minecraftforge.event.level.ChunkEvent;
 import net.minecraftforge.event.server.ServerStartingEvent;
 import net.minecraftforge.eventbus.api.SubscribeEvent;
@@ -39,6 +41,24 @@ public class AsteroidEvents {
         if (data.isGenerated(key)) return;
 
         QUEUE.add(new ChunkTask(level, chunkPos, DELAY_TICKS, key));
+    }
+
+    @SubscribeEvent
+    public static void onPlayerEnterDimension(PlayerEvent.PlayerChangedDimensionEvent event) {
+
+        if (!(event.getEntity().level() instanceof ServerLevel level)) return;
+
+        String dim = level.dimension().location().toString();
+
+        if (!AsteroidConfigLoader.LOADED_CONFIGS.containsKey(dim)) return;
+
+        BlockPos rawPos = event.getEntity().blockPosition();
+        BlockPos pos = new BlockPos(rawPos.getX(), 120, rawPos.getZ());
+
+        LOGGER.info("[Asteroids] Detected station position for {} at {}", dim, pos);
+
+        AsteroidSavedData data = AsteroidSavedData.get(level);
+        data.setStationCenter(dim, pos);
     }
 
     @SubscribeEvent

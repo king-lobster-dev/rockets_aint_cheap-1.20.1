@@ -1,16 +1,30 @@
 package net.lobster.rockets_aint_cheap.world;
 
+import net.minecraft.core.BlockPos;
 import net.minecraft.nbt.CompoundTag;
 import net.minecraft.nbt.ListTag;
 import net.minecraft.nbt.StringTag;
 import net.minecraft.world.level.saveddata.SavedData;
 
+import java.util.HashMap;
 import java.util.HashSet;
+import java.util.Map;
 import java.util.Set;
 
 public class AsteroidSavedData extends SavedData {
 
     private static final String DATA_NAME = "rockets_aint_cheap_asteroids";
+
+    private final Map<String, BlockPos> stationCenters = new HashMap<>();
+
+    public void setStationCenter(String dim, BlockPos pos) {
+        stationCenters.put(dim, pos);
+        setDirty();
+    }
+
+    public BlockPos getStationCenter(String dim) {
+        return stationCenters.getOrDefault(dim, BlockPos.ZERO);
+    }
 
     private final Set<String> generatedChunks = new HashSet<>();
 

@@ -5,8 +5,7 @@
   "minY": -40,
   "maxY": 200,
 
-  "safeRadius": 50,
-  "center": [0, 120, 0],
+  "safeRadius": 32,
 
   "sizeWeights": [0.74, 0.10, 0.08, 0.08],
   "sizeRanges": [

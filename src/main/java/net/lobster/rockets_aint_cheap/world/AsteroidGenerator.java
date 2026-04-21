@@ -28,7 +28,14 @@ public class AsteroidGenerator {
         BlockPos center = new BlockPos(x, y, z);
 
         // Safe zone
-        if (center.closerThan(config.center, config.safeRadius)) return;
+        BlockPos stationCenter = AsteroidSavedData.get(level).getStationCenter(dim);
+
+        double dx = center.getX() - stationCenter.getX();
+        double dz = center.getZ() - stationCenter.getZ();
+
+        double distSq = dx * dx + dz * dz;
+
+        if (distSq < config.safeRadius * config.safeRadius) return;
 
         AsteroidConfig.AsteroidType type = config.pickRandomType(random);
 
